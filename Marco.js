@@ -22,4 +22,22 @@ function sum(myArray) {
 } 
  document.write("<br>")
 document.write("Sum of given array is " + sum(myArray));
- 
+ //Q5
+ document.write("<br>")
+ document.write("The Smallest Number in the Array is " + Math.min(...myArray))
+ document.write("<br>")
+ document.write("The Largest Number in the Array is " + Math.max(...myArray))
+ //Q6
+ document.write("<br>")
+ var biggest = myArray[0];
+var nextbiggest = myArray[0];
+    for(var i=0;i<myArray.length;i++){
+        if(myArray[i]>biggest){
+            nextbiggest = biggest;
+            biggest = myArray[i];
+        }
+        else if(myArray[i]>nextbiggest && myArray[i]!=biggest)
+            nextbiggest = myArray[i];
+    }
+    
+document.write("The Second Largest Number in the Array is " + nextbiggest);
