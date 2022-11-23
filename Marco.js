@@ -41,3 +41,37 @@ var nextbiggest = myArray[0];
     }
     
 document.write("The Second Largest Number in the Array is " + nextbiggest);
+//Q7
+document.write("<br>")
+let even_count= 0;
+let odd_count = 0;
+
+
+for(let o = 0; o < myArray.length; o++) {
+    if(myArray[o] % 2==0){
+    even_count++;
+     } else{
+    odd_count++;}
+}
+document.write("The Number of Even Elements in the Array is "+ even_count
++ "<br>" + "The Number of Odd Elements in the Array is "+ odd_count)
+
+//Q8
+document.write("<br>")
+document.write("<br>")
+let array1 = [-12, 4, 18, 23, 4000000, 80, 65];
+document.write(array1)
+document.write("<br>")
+let newArray = myArray.concat(array1);
+document.write("Both of the Existing Arrays combined are "+ newArray);
+
+//Q9
+document.write("<br>")
+newArray.push(89)
+document.write("The New Array but with an Added 89 "+ newArray)
+
+//Q10
+document.write("<br>")
+var popped = newArray.pop(); 
+        document.write("Removed element: " + popped + "<br>"); 
+        document.write("Remaining elements: " + newArray); 
