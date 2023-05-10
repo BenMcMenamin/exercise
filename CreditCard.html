@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Credit Card Input</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f2f2f2;
+    }
+    h2 {
+      color: #333;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    #submitBtn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    .valid {
+      color: green;
+    }
+    .invalid {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Enter Credit Card Number:</h2>
+  <form id="creditCardForm">
+    <input type="text" id="creditCardInput" placeholder="Enter your credit card number" />
+    <br />
+    <button type="submit" id="submitBtn">Submit</button>
+  </form>
+
+  <div id="message"></div>
+
+  <script>
+    document.getElementById("creditCardForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Retrieve credit card number from input field
+      var creditCardNumber = document.getElementById("creditCardInput").value;
+
+      // Remove any previous messages
+      var messageElement = document.getElementById("message");
+      messageElement.innerHTML = "";
+
+      // Validate credit card number
+      if (creditCardNumber.trim() === "") {
+        showMessage("Please enter a credit card number.", "invalid");
+      } else if (!/^\d+$/.test(creditCardNumber)) {
+        showMessage("Credit card number should only contain digits.", "invalid");
+      } else if (!isValidCreditCardNumber(creditCardNumber)) {
+        showMessage("Invalid credit card number.", "invalid");
+      } else {
+        showMessage("Credit card number is valid.", "valid");
+      }
+
+      // Reset the form
+      document.getElementById("creditCardForm").reset();
+    });
+
+    // Function to display a message with the specified class
+    function showMessage(message, className) {
+      var messageElement = document.getElementById("message");
+      messageElement.innerHTML = message;
+      messageElement.className = className;
+    }
+
+    // Function to validate the credit card number using the Luhn algorithm
+    function isValidCreditCardNumber(number) {
+      var sum = 0;
+      var shouldDouble = false;
+      for (var i = number.length - 1; i >= 0; i--) {
+        var digit = parseInt(number.charAt(i));
+        if (shouldDouble) {
+          digit *= 2;
+          if (digit > 9) {
+            digit -= 9;
+          }
+        }
+        sum += digit;
+        shouldDouble = !shouldDouble;
+      }
+      return sum % 10 === 0;
+    }
+  </script>
+</body>
+</html>
