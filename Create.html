@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+           
+        </head>
+        <style>
+  .topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+table, th, td {
+  border:1px solid black;
+}
+          </style>
+        <body>
+            <div class="topnav">
+                <a href="fwu.html">Meeting The Brief</a>
+                <a href="FI.html">Investigation</a>
+                <a href="FPAD.html">Plan and Design</a>
+                <a class="active" href="Create.html">Create</a>
+                <a href="Evaluation.html">Evaluation</a>
+                <a href="References.html">References</a>
+                <center><h2 style="color: white;">Create</h2></center>
+              </div>
+           <p>
+            <h2>Weekly Log</h2>
+           <h3>WEEK 1:</h3>
+            The first thing I did when starting this project was immediately trying to think of an idea that would meet the brief. I quickly thought of the idea of a memory game and I got to work on my code.
+            
+            <h3>WEEK 2:</h3>
+            On week 2, I started coding on makecode for my microbit code and got most of it completed all that was left was the adding the score and serial
+            <h3>WEEK 3:</h3>
+            Week 3, I finally completed all of my microbit code and the game was working brilliant. However, that was just the easy bit as it was all going to get more difficult from here
+            
+            <h3>WEEK 4:</h3>
+            Week 4, I started coding on Thonny  and successfully got my microbit data to send the users score to Thonny
+            
+            <h3>WEEK 5:</h3>
+            Week 5, I got the data from Thonny to be stored on a database in firbase. I also created a bar chart to display the users score
+            
+            <h3>WEEK 6:</h3>
+            Week 6, I created a line graph that shows the users moving average the more times they play
+            
+            <h3>WEEK 7:</h3>
+            Week 7, I finished my Thonny code. I wrote up code that would let the user know is their memory is increasing or decreasing
+            
+            <h3>WEEK 8:</h3>
+            On Week 8, I began writing the write-up. I started with the investigation and moved on the plan and design. I finished plan and design just before the week ended.
+            
+            <h3>WEEK 9:</h3>
+            On week 9, I continued with the website as I wrote up the evaluation.
+            
+            <h3>WEEK 10:</h3>
+            On week 10, I took all the write-up from word and coded it onto a html website
+            
+            <h3>WEEK 11:</h3>
+            On week 11, I started recording the video. I finished the screen recordings and microbit recordings
+            
+            <h3>WEEK 12:</h3>
+            On week 12, I finished my video and also put this weekly log onto the website to complete the project
+            
+            <h3>IMPLEMENTATION:</h3>
+            The first feature that I implemented was making the microbit display a random letter. This was the main feature of my project as if I could not figure it out, I’d have to chance project idea. I used a random integer function to get this work by making the random integers one of 1 or 2. I then made 1 = A and 2 = B by implementing an if/else loop. I then implemented a function that would check to see if the answer is correct or not. This was also coded with an if/else loop. After having the major sections implemented, I started working on the more minor sections. I coded in an LED tick and x that would show depending if you are correct or incorrect. I implemented two different sounds, one will play if the user is correct, the other that will play if the user is incorrect. The final section I implemented was the score, which would be massive when it comes to Thonny and firebase and the graphs. I added this into the check function that if the user is correct, the score should increase by one. I also added a section to the check function that would immediately make the game end once the user was incorrect. During the implementation, the biggest problem I faced was trying to think of a way to tell the user something about their memory. I wanted to tell the user if their memory was improving or decreasing, my only problem was how could I do that. I solved this problem when I thought of the idea to implement the moving average to try and see if their memory was improving or not.
+            
+            To help you understand the code more, here is a detailed explanation of a piece of code I used;
+            This code is part of a function called check, this function checks the answer entered by the user and checks to see whether it is correct or not. I used an if/else loop to complete this function. If the answer given by the user is the same as the question given by the microbit, then the LED’s on the microbit will display a tick. In the else loop, the microbit will show an x if the users answer does not match the microbits question
+            
+            
+            <h3>UNIT TESTING:</h3>
+            The first code is testing whether the name entered is only using alphabetical characters and the second code is testing whether the name entered is only using numerical values
+            <table style="width:100%">
+                <tr>
+            <th>Function</th>	
+            <th>Input</th>	
+            <th>Expected Output</th>
+            <th>Actual Output</th>	
+            <th>Changes</th>            
+                    </tr>
+                    <tr>
+                        <td><img src="c:\Users\18BMcMenamin.ACC\Pictures\UT1.PNG"></td>
+                        <td>Apple</td>
+                        <td>Valid Name</td>
+                        <td>Valid Name</td>
+                        <td>None</td>
+                      </tr>
+                      <tr>
+                        <td> </td>
+                        <td>John1</td>
+                        <td>Invalid Name</td>
+                        <td>Invalid Name</td>
+                        <td>None</td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>Bob</td>
+                        <td>Valid Name</td>
+                        <td>Valid Name</td>
+                        <td>None</td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>James14</td>
+                        <td>Invalid Name</td>
+                        <td>Invalid Name</td>
+                        <td>None</td>
+                        <tr>
+                            <td></td>
+                            <td>Mark24</td>
+                            <td>Invalid Name</td>
+                            <td>Invalid Name</td>
+                            <td>None</td>
+                          </tr>
+                          <td><img src="c:\Users\18BMcMenamin.ACC\Pictures\UT2.PNG"></td>
+                        <td>3</td>
+                        <td>Valid Score</td>
+                        <td>Valid Score</td>
+                        <td>None</td>
+                      </tr>
+                      <tr>
+                        <td> </td>
+                        <td>Green</td>
+                        <td>Invalid Score</td>
+                        <td>Invalid Score</td>
+                        <td>None</td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>12</td>
+                        <td>Valid Score</td>
+                        <td>Valid Score</td>
+                        <td>None</td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>32</td>
+                        <td>Valid Score</td>
+                        <td>Valid Score</td>
+                        <td>None</td>
+                        <tr>
+                            <td></td>
+                            <td>Octopus</td>
+                            <td>Inalid Score</td>
+                            <td>Invalid Score</td>
+                            <td>None</td>
+                          </tr>
+                      </tr>
+            </table>
+            
+           </p>
+           
+        </body>
+    </html>
